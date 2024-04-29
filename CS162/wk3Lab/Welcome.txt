@@ -1,0 +1,9 @@
+Welcome to Charlie's Trivia for Fine Film ! 
+In this game you will be asked very difficult questions about 
+some of the greatest work of film art from the later part of 
+the 20th century.
+Each correct answer rewards a point and with the possiblity of 
+a random movie theater prize. If you answer 1 question incorrectly
+3 times you lose the game. But dont worry, culture can be 
+learned and you can return to play again another time.  Good Luck!
+
