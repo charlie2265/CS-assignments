@@ -1,0 +1,60 @@
+Imagine that a struct with the tag Person consists of a name, age, and salary. 
+(1) What data types might these data members be?
+The data types and declaration would be 
+string name;
+int age = 0;
+double salary = 0;  
+
+Suppose we want every record (each struct stored in a file) to be the exact same size. 
+Since string objects do not provide this for us, we would have to declare the name as a 
+C-String, an array of char. Suppose we select 15 for the declared size of the character array. Now, 
+(2) how many bytes will the struct consume? (Think about the sum of the sizes of all the data members in one struct.)
+
+The struct will likely be using 32 bytes of memory. 15 for the char[15] member variable -one byte per character + the null terminator,
+and 4 bytes  for the int age and 8 for the double salary varaiables. 
+
+3) Certain systems optimize their operational efficiency by allotting memory only in multiples of eight bytes. If this were the case, 
+how many bytes would the struct consume? 
+
+Does this mean each c-string character is 8 bytes?! That would push consumption up to 136 bytes for the struct.
+
+(4) Explain how you would test this on your system, then test it and 
+I worte the following code and compiled it locally (not onlinegdb)
+#include <iostream>
+using namespace std;
+struct Person{
+    char name[15];
+    int age = 27;
+    double salary = 200000000;
+};
+
+int main()
+{
+    Person Joe; 
+    
+    cout << sizeof(Joes) << " Bytes" << endl;
+
+    return 0;
+}
+and got this output
+(5) tell us how many bytes each struct consumes.
+32 bytes. 
+Tells me my machine does not allot only in multiples of 8. 
+
+
+
+Hint: cout << sizeof(int) << " " <<  sizeof(Person) << endl; // Displays the size of an int var and the size of a Person struct.
+
+(6) Finally, imagine needing to move the file pointer to the 100th Person struct in a file, call it person[99]. 
+If the first byte in the file is byte 0, what is the number of the byte where person[99] starts? (Note: person[] is an array 
+of Person structs.)
+
+The 100th Person struct in an array of persons[99] would start at 3,168th byte and would make up the last 32 bytes 
+in the 3200 bytes of the 100 structs. 
+
+Hint: Write out the number of the byte where the first person, person[0] starts, which is byte #0. Then write the number where 
+person[1] starts, etc. until you see a pattern that you can express as a formula.
+
+Hint #2: If you are completely lost, then answer a different question for #6: If a certain book contains exactly 100 characters 
+per page, and we number the characters of the book starting at 0, then what character number appears at the top of page 0? page 1? 
+page 2? page 3? page 9? page 1001? (Assume the first page of the book is page 0.)
