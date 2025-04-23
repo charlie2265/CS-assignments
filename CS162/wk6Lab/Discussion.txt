@@ -1,0 +1,34 @@
+Now, when defining an operator overload function the question arises as to whether this can be done as a member function of 
+the object (e.g., the struct) or whether it must be done as a non-member function. The answer to this question boils down to one thing: 
+Is the left operand an object of this struct? If the answer is yes, then the operator overload function can be a member function. If 
+the answer is no, then the operator overload function must be a non-member function.
+
+(1) Please discuss why this is the case. (2) Provide an example of each (but only two total), giving the full syntax of each function 
+prototype, one for a member function and the other for a non-member function. Avoid using the example below.
+
+1) If you overload an operator as a member function the parameter points to the object the function is being called on.
+    If you overload an operator and the left side operand is not a member of an object the function parameter will not point to the object and 
+    will not be a member function?
+
+2) 
+    struct Pair{
+        int a = 0;
+        int b = 0;
+
+        // member function is defined inside of the struct, and the parameter is the right side operand. 
+        // the left operand is the Pair object.  
+        Pair operator * ( const Pair& p2){            
+        Pair product;
+        product.a = p2.a * p2.a - p2.b * p2.b;   //[a1 * a2] - [b1 * b2],  
+        product.b = p2.a * p2.b + p2.b * p2.a;  // [a1 * b2] + [b1 * a2] , which is a complex number
+        return product;
+    }
+    }
+
+    // non member function to overload the * operator
+    Pair operator * ( Pair p1, Pair p2){            
+    Pair product;
+    product.a = p1.a * p2.a - p1.b * p2.b;   //[a1 * a2] - [b1 * b2],  
+    product.b = p1.a * p2.b + p1.b * p2.a;  // [a1 * b2] + [b1 * a2] , which is a complex number
+    return product;
+}

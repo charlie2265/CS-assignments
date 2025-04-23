@@ -1,0 +1,127 @@
+1) What is the difference between a class and an instance of the class?
+A class is the  "blueprint" of an object, an instance of a class is using that blueprint. 
+
+2) What is the difference between the following Person structure and Person class?
+    struct Person
+    {
+    string name;
+    int age;
+    };
+
+    class Person
+    {
+    string name;
+    int age;
+    };
+
+The members of the struct are public by default they can be accessed anywhere in the program. and the members of the 
+class are private by default they must be made public or they will only be accessable in the class. 
+
+3) What is the default access specification of class members?
+the default access specification is private. 
+
+4) Look at the following function header for a member function:
+    void Circle::getRadius()
+    What is the name of the function?
+    Of, what class is the function a member?
+
+    Function name is getRadius
+    it belongs to the Circle class
+
+5) A contractor uses a blueprint to build a set of identical houses. Are classes analogous to the blueprint or the houses?
+    The blueprint are an analagy to classes.
+
+6)  What is a mutator function? What is an accessor function?
+    An accessor function is a member function that gets a value from a member variable but does not change its value. 
+    A mutator function is a member function that assigns a value to a member variable. 
+
+7) Is it a good idea to make member variables private? Why or why not?
+    It is a good idea to make member variables private to prevent unintended modification the their values. They must be accessed by the 
+    accessor or mutator functions provided by the author. 
+
+8) Can you think of a good reason to avoid writing statements in a class member function that use cout or cin?
+    To separate the I/O from the inner workings of the program. 
+
+9) Under what circumstances should a member function be private?
+When the function needs to perform a calculation to a member variable, when a value is stored in a member variable and no other time. 
+That function should be kept from being manipulated by users. 
+
+10) What is a constructor? What is a destructor?
+    A member function that is called when a class object is created. 
+    A member function that is called when a class object is destroyed. 
+
+11) What is a default constructor? Is it possible to have more than one default constructor?
+    A constructor with default values or no values for parameters. You can only have one in a class.
+
+12) Is it possible to have more than one constructor? Is it possible to have more than one destructor?
+    You can have more than one constructor, but only one destructor. 
+
+13) If a class object is dynamically allocated in memory, does its constructor execute? If so, when?
+    The consturctor executes right after the memory is allocated. 
+
+14) When defining an array of class objects, how do you pass arguments to the constructor for each object in the array?
+    in the form of a function call
+
+15) What are a class’s responsibilities?
+    A class is responsible for holding data (variables) and performing actions (functions).
+
+16) How do you identify the classes in a problem domain description?
+    first identify the nouns in the domain description, then refine the list of nouns to eliminate douplicates and same meaning. Then 
+    eliminate unnecessary items that are not concerned with the problem. Then identify things that would represent an instance of a class. 
+    Identify nouns that are better represented as a viariable these would be related items. Then identify nouns that wuld perform an action. 
+    The remaining nouns will be the classes for the program. 
+
+17)  Modular and Object Oriented
+
+18) Modular
+
+19) Object Oriented
+
+20) Encapsulation
+
+21) constructor 
+
+22) struct
+
+23) Access specifier
+
+24) private
+
+25) public
+
+26) instantiation
+
+27) * or ->
+
+28) canine.h
+
+29) canine.cpp
+
+30) inline
+
+31) constructor
+
+32) constructor
+
+33) constructors
+
+34) return
+
+35) default
+
+36) destructor
+
+37) tilde ~
+
+38) return
+
+39) default
+
+40) Signature
+
+41) constructor and destructor
+
+42) constructor
+
+
+

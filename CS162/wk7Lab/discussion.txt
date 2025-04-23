@@ -1,0 +1,38 @@
+Memeber function: If you need to access the member variables or data in the private section of the class.
+All of these functions from our lab wk7 Lab 1 are member functions.
+class Product {
+    private:
+        static int counter;
+        int serial;
+        char sku[16];
+        char desc[31];
+        double price;
+        int qty;
+    public:
+        Product(): serial {++counter}, sku {""}, desc {""}, price {0}, qty {0} {};
+        Product(const Product& source); 
+        Product(char arg_sku[], char arg_desc[], double arg_price, int arg_qty);
+        int get_serial(){return serial;}
+        char* get_desc(){return desc;}
+        void output(ostream& os, char ori = 'V');
+
+};
+
+Non Memeber Friend function: If the function needs to access the private data of the class but is not a 
+member of the class. This would be used when accessing objects from a class but really doesnt make any logical 
+manipulations in the class.
+
+This would be an example of a friend function checking if to customer objects contain the same value for the private member city, in a class
+named customer
+
+friend bool sameCity(const Customer& c1, const Customer& c2){
+    return strcmp(c1.city, c2.city) == 0;
+}
+
+Non Member Non Friend function: This is a function that can only access data in the public section of the class
+
+This would use a public getID function from the class called customer.
+
+void printID(const Customer& c) {
+    cout << "Customer ID: " << c.getID() << endl;
+}
